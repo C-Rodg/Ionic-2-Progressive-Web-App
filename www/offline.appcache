@@ -1,0 +1,76 @@
+CACHE MANIFEST
+# 2016-06-01:16:v1
+
+# Explicit cached entries
+
+# HTML
+index.html
+build/pages/header/header.html
+build/pages/page-capture/page-capture.html
+build/pages/page-leads/page-leads.html
+build/pages/page-settings/page-settings.html
+build/pages/tabs/tabs.html
+
+# CSS
+build/css/app.md.css
+build/css/app.ios.css
+build/css/app.wp.css
+
+# FONTS
+build/fonts/ionicons.ttf
+build/fonts/ionicons.woff
+build/fonts/ionicons.woff2
+build/fonts/roboto-bold.ttf
+build/fonts/roboto-bold.woff
+build/fonts/roboto-light.ttf
+build/fonts/roboto-light.woff
+build/fonts/roboto-medium.ttf
+build/fonts/roboto-medium.woff
+build/fonts/roboto-regular.ttf
+build/fonts/roboto-regular.woff
+build/fonts/noto-sans-bold.ttf
+build/fonts/noto-sans-regular.ttf
+
+# JAVASCRIPT
+build/js/angular2-polyfills.js
+build/js/app.bundle.js
+build/js/app.bundle.js.map
+build/js/es6-shim.min.js
+
+# IMAGES
+img/logo.png
+android-icon-36x36.png
+android-icon-48x48.png
+android-icon-72x72.png
+android-icon-96x96.png
+android-icon-144x144.png
+android-icon-192x192.png
+apple-icon.png
+apple-icon-57x57.png
+apple-icon-60x60.png
+apple-icon-72x72.png
+apple-icon-76x76.png
+apple-icon-114x114.png
+apple-icon-120x120.png
+apple-icon-144x144.png
+apple-icon-152x152.png
+apple-icon-167x167.png
+apple-icon-180x180.png
+apple-icon-precomposed.png
+favicon.ico
+favicon-16x16.png
+favicon-32x32.png
+favicon-96x96.png
+ms-icon-70x70.png
+ms-icon-144x144.png
+ms-icon-150x150.png
+ms-icon-310x310.png
+
+# White-list network files
+NETWORK:
+*
+
+FALLBACK:
+build/fonts/ionicons.ttf build/fonts/ionicons.ttf
+build/fonts/ionicons.woff build/fonts/ionicons.woff
+build/fonts/ionicons.woff2 build/fonts/ionicons.woff2

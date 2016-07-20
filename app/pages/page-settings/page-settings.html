@@ -1,0 +1,30 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+    Settings
+  </ion-title>
+</ion-navbar>
+
+<ion-content padding class="page3">
+	<ion-item>
+        <ion-label floating>Booth Rep</ion-label>
+        <ion-input type="text" [(ngModel)]="rep"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Station Name</ion-label>
+        <ion-input type="text" [(ngModel)]="station"></ion-input>
+    </ion-item>
+
+    <ion-item class="m-t-10 m-b-10">
+      <ion-label>Overwrite Records</ion-label>
+      <ion-toggle [(ngModel)]="overwrite" yellow (click)="saveOverwrite()"></ion-toggle>
+    </ion-item>
+
+    <button block large primary (click)="forceUpload()">Force Upload</button>
+
+    <button block large red (click)="clearDeleted()" class="m-t-10">Clear Deleted</button>
+</ion-content>
+
+<ion-toolbar position="bottom">
+  <ion-title>Pending Uploads: {{ pending }}</ion-title>
+</ion-toolbar>

@@ -1,0 +1,173 @@
+<ion-navbar *navbar>
+  <ion-title>Lead Capture</ion-title>
+</ion-navbar>
+
+<ion-content padding class="capture-tab">
+	
+	<header-image></header-image>	
+
+	<!-- ******************* SURVEY CONTENT ********************* -->
+    <ion-item class="req">
+        <ion-label stacked>First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrFirstName"></ion-input>
+    </ion-item>
+
+    <ion-item class="req">
+        <ion-label stacked>Last Name</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrLastName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="person.formData.qrEmail"></ion-input>
+    </ion-item>
+
+    <ion-item class="req">
+        <ion-label stacked>Company</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrCompany"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Title</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrTitle"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Phone</ion-label>
+        <ion-input type="tel" [(ngModel)]="person.formData.qrPhone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Address</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrAddress1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Address 2</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrAddress2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>City</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrCity"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>State</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrState"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Zip Code</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrZip"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Country</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrCountry"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Notes</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrNotes"></ion-input>
+    </ion-item>
+
+    <ion-item class="req"><!--Pick One-->
+      <ion-label stacked>How would you prefer follow up?</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrFollowUp[0]">
+        <ion-option value="qrFollowUp_1">Sales Rep Call</ion-option>
+        <ion-option value="qrFollowUp_2">Mailing List</ion-option>
+        <ion-option value="qrFollowUp_3">Send Literature</ion-option>
+        <ion-option value="qrFollowUp_4">Raffle Only</ion-option>       
+      </ion-select>
+    </ion-item>
+
+    <div *ngIf="person.formData.qrFollowUp[0] === 'qrFollowUp_1'"><!-- Hidden if not Sales Rep Call -->
+    <ion-item>
+      <ion-label stacked>What types of campaigns do you manage?</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrCampaign" multiple="true">
+        <ion-option value="qrCampaign_1">Face-to-Face Events</ion-option>
+        <ion-option value="qrCampaign_2">Corporate Website</ion-option>
+        <ion-option value="qrCampaign_3">Trade Show exhibits</ion-option>
+        <ion-option value="qrCampaign_4">Email Marketing</ion-option>
+        <ion-option value="qrCampaign_5">Webinars</ion-option>
+        <ion-option value="qrCampaign_6">Social Media</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item><!--Pick One-->
+      <ion-label stacked>How many campaigns do you manage a year?</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrManage[0]">
+        <ion-option value="qrManage_1">0-10</ion-option>
+        <ion-option value="qrManage_2">11-20</ion-option>
+        <ion-option value="qrManage_3">21-40</ion-option>
+        <ion-option value="qrManage_4">41-80</ion-option>
+        <ion-option value="qrManage_5">81-120</ion-option> 
+        <ion-option value="qrManage_6">120+</ion-option>      
+      </ion-select>
+    </ion-item>
+
+    <ion-item><!--Pick One-->
+      <ion-label stacked>What is your role in the purchase of a solution?</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrRole[0]">
+        <ion-option value="qrRole_1">Decision Maker</ion-option>
+        <ion-option value="qrRole_2">Influencer</ion-option>
+        <ion-option value="qrRole_3">Recommender</ion-option>
+        <ion-option value="qrRole_4">User</ion-option>  
+        <ion-option value="qrRole_5">None</ion-option>        
+      </ion-select>
+    </ion-item>
+
+    <ion-item><!--Pick One-->
+      <ion-label stacked>Assuming You Find a Solution That Meets Your Needs, What is Your Purchase Timeframe?</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrSolution[0]">
+        <ion-option value="qrSolution_1">Immediate</ion-option>
+        <ion-option value="qrSolution_2">1 to 3 Months</ion-option>
+        <ion-option value="qrSolution_3">4 to 6 Months</ion-option>
+        <ion-option value="qrSolution_4">7 to 12 Months</ion-option>  
+        <ion-option value="qrSolution_5">More than 12 Months</ion-option>        
+        <ion-option value="qrSolution_6">Unknown</ion-option>  
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>What product are you interested in learning more about?</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrProduct" multiple="true">
+        <ion-option value="qrProduct_1">Test 1</ion-option>
+        <ion-option value="qrProduct_2">Test 2</ion-option>
+        <ion-option value="qrProduct_3">Test 3</ion-option>
+        <ion-option value="qrProduct_4">Test 4</ion-option>
+        <ion-option value="qrProduct_5">Test 5</ion-option>
+      </ion-select>
+    </ion-item>
+    </div>
+
+
+	<!-- *********************** LEAD RANKING ***************************** -->
+    <ion-item style="display:none;"><!--Hidden Lead Ranking-->
+      <ion-label stacked>Lead Rank</ion-label>
+      <ion-select [(ngModel)]="person.formData.qrLeadRank[0]">
+        <ion-option value="qrLeadRank_1">Hot</ion-option>
+        <ion-option value="qrLeadRank_2">Warm</ion-option>
+        <ion-option value="qrLeadRank_3">Cold</ion-option>        
+      </ion-select>
+    </ion-item>
+
+	<!-- *********************** PERMANENT FIELDS ***************************** -->
+    <ion-item style="display:none;"><!--Hidden Record Guid -->
+        <ion-label floating>RegId</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrRegId" disabled></ion-input>
+    </ion-item>
+
+    <ion-item style="display:none;"><!--Hidden Booth Rep -->
+        <ion-label floating>Booth Rep</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrBoothRep" disabled></ion-input>
+    </ion-item>
+
+    <ion-item style="display:none;"><!--Hidden Booth Rep -->
+        <ion-label floating>Booth Station</ion-label>
+        <ion-input type="text" [(ngModel)]="person.formData.qrBoothStation" disabled></ion-input>
+    </ion-item>
+
+     <button block large primary (click)="savePerson()" class="m-t-10">{{editFlag ? 'Save Edits' : 'Save New Record'}}</button>
+</ion-content>

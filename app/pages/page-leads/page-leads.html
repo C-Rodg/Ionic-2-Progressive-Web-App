@@ -1,0 +1,25 @@
+<ion-navbar *navbar>
+  <ion-title>
+    List Leads
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="page2">
+	<ion-list>
+		<ion-item-sliding *ngFor="#person of registrants; #i = index">
+	 	 	<ion-item>
+	   		 	<h2>{{ person.formdata.qrFirstName }}  {{ person.formdata.qrLastName }}</h2>
+	    		<h3>{{ person.formdata.qrCompany }} <span *ngIf="person.formdata.Company && person.formdata.Title"> - </span>  {{ person.formdata.qrTitle }}</h3>
+	    		<p>{{ person.formdata.qrPhone }} <span *ngIf="person.formdata.qrPhone && person.formdata.qrEmail"> - </span>  {{ person.formdata.qrEmail}} </p>	    		
+	    	</ion-item>
+	    	<ion-item-options>
+	    		<button secondary (click)="editPerson(person, i)"><ion-icon name="create"></ion-icon> Edit</button>
+				<button danger (click)="removePerson(person, person.recordguid, i, person.upload)"><ion-icon name="trash"></ion-icon> Delete</button>
+	    	</ion-item-options>
+	  	</ion-item-sliding>
+	</ion-list>
+</ion-content>
+
+<ion-toolbar position="bottom">
+  <ion-title>Leads: {{ registrants.length }}</ion-title>
+</ion-toolbar>
